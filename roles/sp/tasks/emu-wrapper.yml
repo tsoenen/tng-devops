@@ -7,9 +7,9 @@
     image: "tsoenen/tng-ia-emu"
     env:
       broker_host: amqp://guest:guest@son-broker:5672/%2F
-      broker_exchange: son-kernel-ia
-      topic_prefix: "emu"
-      path_to_nbi: "http://pre-int-sp-ath.5gtango.eu:8083/api/ia/v1"
+      # broker_exchange: son-kernel-ia
+      # topic_prefix: "emu"
+      # path_to_nbi: "http://pre-int-sp-ath.5gtango.eu:8083/api/ia/v1"
       emulator_path: "http://vim-emu:5001/restapi/"
     restart_policy: "always"
     network_mode: bridge
@@ -19,4 +19,6 @@
           - tng-sp-ia-emu
     state: started
     recreate: yes
-    pull: true
+    pull: false
+  async: 20
+  poll: 0

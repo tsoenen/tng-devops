@@ -8,7 +8,6 @@
     env:
       broker_host: amqp://guest:guest@son-broker:5672/%2F
       broker_name: son-broker,broker
-      json_logger: True
     network_mode: bridge
     networks:
       - name: "{{ docker_network_name }}"
@@ -19,6 +18,9 @@
     restart_policy: "always"
     state: started
     recreate: yes
-    pull: true
+    pull: false
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
+  async: 20
+  poll: 0
+  register: smr_install

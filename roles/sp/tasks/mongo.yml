@@ -9,7 +9,7 @@
       - "/etc/sonata/data/mongodb:/data/db"
     state: started
     recreate: yes
-    pull: true
+    pull: false
     restart_policy: "always"
     network_mode: bridge
     networks:
@@ -18,6 +18,5 @@
           - son-mongo
           - mongo
     published_ports: 27017:27017
-
-- name: Wait until the string "Mongodb" is UP
-  wait_for: host=0.0.0.0 port=27017 timeout=30 delay=10 state=started
+  async: 20
+  poll: 0

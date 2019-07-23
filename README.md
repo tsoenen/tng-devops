@@ -16,12 +16,10 @@ This repository is used to handle the multiple environments for 5GTANGO and the 
 This is the tree structure of the repository:
 
 ```
+.
 ├── environments
 ├── host_vars
-│   ├── demo-comm-sp.5gtango.eu
-│   ├── files.txt
 │   ├── int-sp-ath.5gtango.eu
-│   ├── int-vnv.5gtango.eu
 │   ├── int-vnv-ave-5gtango.eu
 │   ├── localhost
 │   ├── pre-int-sp-ath.5gtango.eu
@@ -30,11 +28,7 @@ This is the tree structure of the repository:
 │   ├── qual-sp-ave.5gtango.eu
 │   ├── qual-sp-bcn.5gtango.eu
 │   ├── sta-sp-ath.5gtango.eu
-│   ├── sta-sp-ath-v4-0.5gtango.eu
-│   ├── sta-sp-ave.5gtango.eu
-│   ├── sta-sp-ave-v4-0.5gtango.eu
-│   ├── sta-vnv-ath-v4-0.5gtango.eu
-│   └── sta-vnv-ave-v4-0.5gtango.eu
+│   └── sta-sp-ave.5gtango.eu
 ├── Jenkinsfile
 ├── LICENSE
 ├── README.md
@@ -53,31 +47,19 @@ This is the tree structure of the repository:
 │   ├── sdk.yml
 │   ├── sp
 │   │   └── tasks
-│   │       ├── add-athens-pop1-vim-wim-1.yml
-│   │       ├── add-athens-pop1-vim-wim-2.yml
-│   │       ├── add-athens-pop1-vim-wim-3.yml
 │   │       ├── add-athens-pop1-vim-wim.yml
-│   │       ├── add-aveiro-pop2-vim-wim.yml
-│   │       ├── add-barcelona-pop1-vim-wim.yml
-│   │       ├── add-bcn-pop1-vim-wim.yml
 │   │       ├── add-mock-vim-wim.yml
-│   │       ├── alertmanager.yml
 │   │       ├── api-gtw.yml
 │   │       ├── bss.yml
 │   │       ├── cat.yml
-│   │       ├── clean_db.yml
 │   │       ├── flm.yml
 │   │       ├── fnct.yml
-│   │       ├── grafana.yml
 │   │       ├── gtkapi.yml
 │   │       ├── gtk-common.yml
 │   │       ├── gtkrec.yml
 │   │       ├── gtk-sp.yml
-│   │       ├── gtk-usr.yml
 │   │       ├── gui.yml
-│   │       ├── ia-nbi.yml
 │   │       ├── influxdb.yml
-│   │       ├── k8s-wrapper.yml
 │   │       ├── keycloak.yml
 │   │       ├── kpi.yml
 │   │       ├── lic.yml
@@ -112,44 +94,24 @@ This is the tree structure of the repository:
 │   │       ├── usr.yml
 │   │       ├── val.yml
 │   │       ├── vim-adaptor.yml
-│   │       ├── vim-wrapper-heat.yml
-│   │       ├── vim-wrapper-mock.yml
-│   │       ├── vim-wrapper-ovs.yml
 │   │       ├── vim.yml
 │   │       ├── vmprobe.yml
-│   │       ├── wim-adaptor.yml
-│   │       ├── wim-wrapper-mock.yml
-│   │       ├── wim-wrapper-tapi.yml
-│   │       └── wim-wrapper-vtn.yml
+│   │       └── wim-adaptor.yml
 │   ├── sp.yml
 │   ├── vnv
 │   │   └── tasks
-│   │       ├── add-osm-ath.yml
-│   │       ├── add-qual-sp-bcn.yml
 │   │       ├── api-gtw.yml
 │   │       ├── cat.yml
-│   │       ├── grafana.yml
 │   │       ├── gtk-common.yml
 │   │       ├── gtk-vnv.yml
+│   │       ├── lcm.yml
 │   │       ├── main.yml
 │   │       ├── mongo.yml
-│   │       ├── monitmgr.yml
-│   │       ├── pgsql-monitoring.yml
-│   │       ├── pgsql.yml
 │   │       ├── portal.yml
-│   │       ├── prometheus.yml
-│   │       ├── pushgw.yml
-│   │       ├── redis.yml
 │   │       ├── rep.yml
 │   │       ├── sec-gtw.yml
 │   │       ├── tee.yml
-│   │       ├── tng-sdk-analyze-weight.yml
-│   │       ├── tng-sdk-pkg.yml
-│   │       ├── tng-vnv-curator.yml
-│   │       ├── tng-vnv-dsm.yml
-│   │       ├── tng-vnv-executor.yml
-│   │       ├── tng-vnv-planner.yml
-│   │       └── tng-vnv-platform-adapter.yml
+│   │       └── tng-sdk-pkg.yml
 │   └── vnv.yml
 └── utils
     ├── docker-network.yml

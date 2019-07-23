@@ -11,7 +11,6 @@
       vnfr_collection: vnfrs
       monitoring_path: http://son-monitor-manager:8000/api/v1
       broker_host: amqp://guest:guest@son-broker:5672/%2F
-      json_logger: True
     restart_policy: "always"
     network_mode: bridge
     networks:
@@ -20,4 +19,7 @@
           - functionlifecyclemanagement
     state: started
     recreate: yes
-    pull: true
+    pull: false
+  async: 20
+  poll: 0
+  register: flm_install
