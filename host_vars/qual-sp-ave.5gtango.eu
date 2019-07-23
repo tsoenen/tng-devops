@@ -4,15 +4,12 @@
 docker_network_name: tango
 
 ## Version
-version: latest
+version: qual
 
-component: all
-
-## Docker repository
-repository: sonatanfv
+## Private Docker repository
+repository: registry.sonata-nfv.eu:5000
 
 # MONITOR pgSQL database
-
 upassword: !vault |
           $ANSIBLE_VAULT;1.1;AES256
           39636466306132653264376131363734643863653439343862623132353566653338653337636631
@@ -27,12 +24,11 @@ urootpw: !vault |
           32346534373166303262383031666230636332633761363263353733326566636639626238363666
           3733613961666430380a663234333765623362393738663731323539616437646237313662313339
           3161
-
 dbname: monitoring
 dbuser: monitoringuser
 
 # Ruby env
-rack_env : staging
+rack_env : qualification
 
 # GATEKEEPER pgSQL database
 gtk_db_name: gatekeeper
@@ -55,9 +51,6 @@ gtk_keycloak_pass: !vault |
           3366333031363931390a666438343330306538343164653139363463343333626437353065386564
           3733
 
-# GATEKEEPER APPLICATION
-app_gk_base_url: http://localhost/api/v2
-
 # Infrastructure Abstraction
 ia_repo_user: sonatatest
 ia_repo_pass: !vault |
@@ -79,21 +72,5 @@ mon_db_pass: !vault |
           37313336363864363662363866343937656334316563623763646665666237383261333561333163
           3566396637616561660a383363373366646565333631386165653162326366623237636538653761
           3362
-
-# PLANNER pgSQL database
-planner_db_name: planner
-
 clean: false
 platform: sp
-
-## VnV Specific Variables
-## Please replace ip-of-sp by the IP address of the service platform
-app_gk_base_url: http://ip-of-sp:32002/api/v3
-app_vnv_logging_level: DEBUG
-routes_file: vnv_routes.yml
-unpackager_url: http://ip-of-sp:5099/api/v1/packages
-catalogue_url: http://ip-of-sp:4011/catalogues/api/v2
-repository_url: http://tng-rep:4012
-new_package_callback_url: http://tng-vnv-planner:6100/api/v1/packages/on-change
-uploaded_callback_url: http://tng-gtk-common:5000/packages/on-change
-recommender_url: http://tng-vnv-dsm:4010/api/v1/pair
